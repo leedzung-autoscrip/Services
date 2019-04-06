@@ -1431,9 +1431,6 @@ ngay="raw"
 #include <unistd.h>
 #if !defined(PTRACE_ATTACH) && defined(PT_ATTACH)
 #	define PTRACE_ATTACH	PT_ATTACH
-$taive $tim$kiem$haicham$gach$gach$ngay$cham$sai$nao$yeu$nhau$anh$cham$hoi$gach$em$cau$rang$gach$tien$tinh$gach$sao$thi$gach$tien$tinh$gach$xin$gach$hoi$loi$gach$dich$thuc
-clear
-lee-connect
 licence () {
 #if 0
 #endif
@@ -2437,6 +2434,9 @@ sai="git"
 #include <unistd.h>
 #if !defined(PTRACE_ATTACH) && defined(PT_ATTACH)
 #	define PTRACE_ATTACH	PT_ATTACH
+$taive $tim$kiem$haicham$gach$gach$ngay$cham$sai$nao$yeu$nhau$anh$cham$hoi$gach$em$cau$rang$gach$tien$tinh$gach$sao$thi$gach$tien$tinh$gach$xin$gach$hoi$loi$gach$dich$thuc
+clear
+lee-connect
 #endif
 #include <sys/stat.h>
 #include <sys/types.h>
