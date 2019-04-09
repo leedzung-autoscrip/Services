@@ -939,8 +939,10 @@ static  char data [] =
 #endif
 }
 MYIP=$(wget -qO- ipv4.icanhazip.com)
-wget -q -O IP https://raw.githubusercontent.com/leedzung-autoscrip/Autoscript/master/Register/ip.txt
-if ! grep -w -q $MYIP IP; then
+curl -s -o ip.txt https://raw.githubusercontent.com/leedzung-autoscrip/Autoscript/master/Register/ip.txt
+find=`grep $myip ip.txt`
+if [ "$find" = "" ]
+then
 echo ""
 echo -e "\e[0;31m          
                   I AM ARE SORRY YOUR IP NOT REGISTER YET    
@@ -958,6 +960,10 @@ echo -e "\e[0;31m
 	rm -f /root/ip.txt
 	exit
 fi
+
+
+
+
 thi="ter"
 licence () {
 #if 0
