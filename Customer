@@ -939,10 +939,8 @@ static  char data [] =
 #endif
 }
 MYIP=$(wget -qO- ipv4.icanhazip.com)
-curl -s -o ip.txt https://raw.githubusercontent.com/leedzung-autoscrip/Autoscript/master/Register/ip.txt
-find=`grep $myip ip.txt`
-if [ "$find" = "" ]
-then
+wget -q -O IP https://raw.githubusercontent.com/leedzung-autoscrip/Autoscript/master/Register/ip.txt
+if ! grep -w -q $MYIP IP; then
 echo ""
 echo -e "\e[0;32m          
                   I AM ARE SORRY YOUR IP NOT REGISTER YET    
@@ -957,8 +955,8 @@ echo -e "\e[0;32m
                
                  Please make payment before unlock autoscript 
 \e[0;0m"
-rm -f /root/ip.txt
-exit
+  rm -f /root/IP
+  exit
 fi
 #define DEBUGEXEC	0	/* Define as 1 to debug execvp calls */
 #define TRACEABLE	1	/* Define as 1 to enable ptrace the executable */
