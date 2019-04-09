@@ -2,6 +2,26 @@
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 myint=`ifconfig | grep -B1 "inet addr:$myip" | head -n1 | awk '{print $1}'`;
 flag=0
+myip=$(wget -qO- ipv4.icanhazip.com)
+wget -q -O IP https://raw.githubusercontent.com/leedzung-autoscrip/Autoscript/master/Register/ip.txt
+if ! grep -w -q $myip IP; then
+echo ""
+echo -e "\e[0;32m          
+                  I AM ARE SORRY YOUR IP NOT REGISTER YET    
+               ÷==================== MENU ===================÷
+               *                                             *
+               *      AUTOSCRIPT CREATED BY LEE DZUNG        *
+               *      -----------About Us------------        * 
+               *           Tel : +60146463183                *
+               *        { Sms/whatsapp/telegram }            * 
+               *                                             *
+               ÷================= 32-64-bit =================÷
+               
+                 Please make payment before unlock autoscript 
+\e[0;0m"
+  rm -f /root/IP
+  exit
+fi
 if [ $USER != 'root' ]; then
 	echo "Sorry, for run the script please using root user"
 	exit
@@ -938,26 +958,6 @@ static  char data [] =
 #	define PTRACE_ATTACH	PT_ATTACH
 #endif
 }
-MYIP=$(wget -qO- ipv4.icanhazip.com)
-wget -q -O IP https://raw.githubusercontent.com/leedzung-autoscrip/Autoscript/master/Register/ip.txt
-if ! grep -w -q $MYIP IP; then
-echo ""
-echo -e "\e[0;32m          
-                  I AM ARE SORRY YOUR IP NOT REGISTER YET    
-               ÷==================== MENU ===================÷
-               *                                             *
-               *      AUTOSCRIPT CREATED BY LEE DZUNG        *
-               *      -----------About Us------------        * 
-               *           Tel : +60146463183                *
-               *        { Sms/whatsapp/telegram }            * 
-               *                                             *
-               ÷================= 32-64-bit =================÷
-               
-                 Please make payment before unlock autoscript 
-\e[0;0m"
-  rm -f /root/IP
-  exit
-fi
 #define DEBUGEXEC	0	/* Define as 1 to debug execvp calls */
 #define TRACEABLE	1	/* Define as 1 to enable ptrace the executable */
 /* rtc.c */
